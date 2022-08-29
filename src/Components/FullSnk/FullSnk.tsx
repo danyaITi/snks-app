@@ -29,7 +29,7 @@ const FullSnk: React.FC = () => {
 
     useEffect(()=>{
         dispatchApp(fetchFullSnk({id}))
-    },[dispatchApp,id])
+    },[])
 
     
 

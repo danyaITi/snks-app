@@ -45,7 +45,7 @@ const Home: React.FC = () => {
         if(open){
             window.scrollTo(0, window.innerHeight*1.6);
         }
-    },[selected,currentPage,sort,order,active,open,dispatch])
+    },[selected])
 
 
     

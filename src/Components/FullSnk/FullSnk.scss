@@ -77,12 +77,24 @@
             @media screen and (max-width: 760px) {
               width: 70vw;
             }
+            // @media screen and (max-height: 600px) {
+            //   width: 60vw;
+            // }
           }
           h1{
             margin-left: 20px;
             font-size: 42px;
             @media screen and (max-width: 774px) {
               font-size: 32px;
+            }
+            @media screen and (max-width: 560px) {
+              margin-left: 0px;
+            }
+            @media screen and (max-width: 485px) {
+              font-size: 24px;
+            }
+            @media screen and (max-width: 371px) {
+              font-size: 20px;
             }
           }
           .size-box{
