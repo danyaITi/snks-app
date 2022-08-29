@@ -1,0 +1,38 @@
+.pageNumbers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li{
+        border-radius: 50%;
+        padding: 5px 15px;
+        font-size: 26px;
+        font-weight: 400;
+        cursor: pointer;
+        border: 2px solid white;
+        display: inline-block;
+        span{
+            color: black;
+        }
+        @media screen and (max-width: 500px) {
+            font-size: 17px;
+            padding: 3px 9px;
+        }
+        @media screen and (max-width: 315px) {
+            font-size: 15px;
+            padding: 3px 6px;
+        }
+        &:hover{
+            opacity: .7;   
+        }
+        &:not(:last-child){
+            margin-right: 10px;
+        }
+    }
+}
+
+.pageNumbers-item__active{
+    background-color: red;
+    background-image: linear-gradient(45deg, #000000, #af4261);
+    opacity: .7;
+    font-weight: 600;
+}

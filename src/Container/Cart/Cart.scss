@@ -1,0 +1,88 @@
+.cart-content{
+    background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+    height: 100vh;
+    @media screen and (max-width: 745px) {
+        flex-direction: column-reverse;
+    }
+    .form-box{
+        padding-left: 20px;
+        @media screen and (max-width: 745px) {
+            margin-right: 0 !important;
+            margin-top: 50px;
+        }
+        @media screen and (max-width: 745px) {
+            padding: 0px 20px;
+        }
+    }
+    .snk-box{
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        .snk-box-content{
+            width: 400px;
+            height: 300px;
+            overflow-y: visible;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            div{
+                .cart-empty{
+                    position: absolute;
+                    top: 25%;
+                    left: 47%;
+                    transform: translate(-50%,-50%);
+                    font-size: 24px;
+                }
+            }
+        }
+    
+        .totalPrice-count{
+            margin-left: 10px;
+            font-size: 24px;
+            font-weight: 400;
+            color: #000;
+        }
+        .totalPrice-text{
+            font-size: 32px;
+            background-color: red;
+            background-image: linear-gradient(45deg, #000000, #af4261);
+            background-size: 100%;
+            background-repeat: repeat;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+        }
+        .cart-empty{
+            font-weight: 400;
+            font-size:20px;
+        }
+    }
+    
+}
+
+.cart-header{
+    background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+}
+
+
+.snk-box-content::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .snk-box-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9fd;
+  }
+  
+  .snk-box-content::-webkit-scrollbar-thumb {
+    background-color: #f2bf93;
+    background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, .25) 25%,
+     transparent 25%,
+     transparent 50%,
+     rgba(255, 255, 255, .25) 50%,
+     rgba(255, 255, 255, .25) 75%,
+     transparent 75%,
+     transparent);
+  }
