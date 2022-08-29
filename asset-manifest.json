@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/snks-app/static/css/main.4dcf0e8b.css",
+    "main.js": "/snks-app/static/js/main.575c89e9.js",
+    "static/media/img1.jpg": "/snks-app/static/media/img1.197d5a3abade99599144.jpg",
+    "static/media/logo.png": "/snks-app/static/media/logo.582408047b7d155aefb2.png",
+    "static/media/delet.png": "/snks-app/static/media/delet.7c6432cea5b85f8da102.png",
+    "static/media/adidas.jpg": "/snks-app/static/media/adidas.e970fd10ddc709cb00ac.jpg",
+    "static/media/nike.webp": "/snks-app/static/media/nike.a6e574ff8b14eeb2f4fa.webp",
+    "static/media/burger.svg": "/snks-app/static/media/burger.87bfdc3879d7b76a564cf45416e8ed1b.svg",
+    "index.html": "/snks-app/index.html",
+    "static/media/close.svg": "/snks-app/static/media/close.0901be36ca08c30136b9966e6e32dff0.svg",
+    "main.4dcf0e8b.css.map": "/snks-app/static/css/main.4dcf0e8b.css.map",
+    "main.575c89e9.js.map": "/snks-app/static/js/main.575c89e9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4dcf0e8b.css",
+    "static/js/main.575c89e9.js"
+  ]
+}
