@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import {  setActive } from '../../redux/Full/slice'
 import './FullSnk.scss'
 import { setCart } from '../../redux/Cart/slice'
@@ -22,7 +22,6 @@ const FullSnk: React.FC = () => {
     const dispatchApp = useAppDispatch()
 
     const {id} = useParams()
-    const navigate = useNavigate()
 
     const changeActive = () => {
         dispatchApp(setActive(true))
@@ -30,7 +29,7 @@ const FullSnk: React.FC = () => {
 
     useEffect(()=>{
         dispatchApp(fetchFullSnk({id}))
-    },[])
+    },[dispatchApp,id])
 
     
 
@@ -44,10 +43,7 @@ const FullSnk: React.FC = () => {
         !activeSize ? alert("You haven't selected a size") : dispatch(setCart({...obj, count: 0, sizes: activeSize})) && setComplited(true)
     }
 
-    if(status === 'Error'){
-        alert('Error')
-        navigate('/')
-    }
+    
 
     return(
         <div className='fullSnk-content'>
@@ -63,9 +59,9 @@ const FullSnk: React.FC = () => {
                     </Link>
                 </div>
                 <div className='fullSnk__flex fullSnk__center'>
-                    {status === 'Error' ? (<h1>Error</h1>) : <>{status === 'Loading' ? (<div className='fullSnk-loader'></div>) : <><div className='carousel-content'>
+                    {status === 'Error' ? (<h1>Not found:(</h1>) : <>{status === 'Loading' ? (<div className='fullSnk-loader'></div>) : <><div className='carousel-content'>
                         <CarouselComponent sneakers={item}/>
-                    </div>
+                    </div> 
                     <div>
                         <h1>{item?.title}</h1>
                         <h4 className='size'>Sizes:</h4>

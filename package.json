@@ -1,7 +1,7 @@
 {
   "name": "snks-app",
   "version": "0.1.0",
-  "homepage": "https://github.com/danyaITi/snk-app",
+  "homepage": "https://danyaITi.github.io/snks-app",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",

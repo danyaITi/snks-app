@@ -45,7 +45,7 @@ const Home: React.FC = () => {
         if(open){
             window.scrollTo(0, window.innerHeight*1.6);
         }
-    },[selected])
+    },[selected,currentPage,sort,order,active,open,dispatch])
 
 
     
@@ -83,11 +83,11 @@ const Home: React.FC = () => {
                     <div className="body-cards-content">
                         <motion.h1 className="body-title" initial="hidden"  whileInView="visible" custom={1} variants={textAnimation} viewport={{once: true}}>Our Collection</motion.h1>
                         <div className="body-sort"><Sort/></div>
-                        {status === 'Loading' ? (<div className="body-loader">Loading</div>) : <ul>
+                        {status === 'Error' ? (<h1 style={{color: 'black'}}>Was Error...</h1>) : <>{status === 'Loading' ? (<div className="body-loader">Loading</div>) : <ul>
                             {currentSnk.map((snk,index)=>(
                                 <MSnkCard key={snk.id} {...snk} initial="hidden" whileInView="visible" viewport={{amount:0.4, once: true}} whileHover={{ scale: 1.1 }} custom={index+.1} variants={featureAnimation}/>
                             ))}
-                        </ul> }
+                        </ul> }</>}
                         <motion.div className="body-paginate-content" initial="hidden"  whileInView="visible" custom={1} variants={textAnimation} viewport={{once: true}}>
                             <Pagination changePage={changePage} currentPage={currentPage} snkPerPage={snkPerPage} totalSnk={items.length} />
                         </motion.div>
