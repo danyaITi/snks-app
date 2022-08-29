@@ -45,7 +45,7 @@ const FullSnk: React.FC = () => {
     }
 
     if(status === 'Error'){
-        alert('Not Found')
+        alert('Error')
         navigate('/')
     }
 
@@ -63,18 +63,18 @@ const FullSnk: React.FC = () => {
                     </Link>
                 </div>
                 <div className='fullSnk__flex fullSnk__center'>
-                    {status === 'Loading' ? (<div className='fullSnk-loader'></div>) : <><div className='carousel-content'>
+                    {status === 'Error' ? (<h1>Error</h1>) : <>{status === 'Loading' ? (<div className='fullSnk-loader'></div>) : <><div className='carousel-content'>
                         <CarouselComponent sneakers={item}/>
                     </div>
                     <div>
                         <h1>{item?.title}</h1>
                         <h4 className='size'>Sizes:</h4>
-                        <ul className='size-box'>{sizes.map((number,i)=> (<div style={{display:'flex', justifyContent: 'center'}}><li key={i} onClick={()=>setActiveSize(number)} className={activeSize === number ? 'active' : ''}>{number}</li></div>))} </ul>
+                        <ul className='size-box'>{sizes.map((number)=> (<div key={number} style={{display:'flex', justifyContent: 'center'}}><li onClick={()=>setActiveSize(number)} className={activeSize === number ? 'active' : ''}>{number}</li></div>))} </ul>
                         <div className='fullSnk-button'>
                             <button disabled={complited===true} onClick={addCart} className={!complited ? 'btnNoActive' : 'btnActive'}>{complited ? (<><span>Complited! </span> <Link to='/cart' className='toCart'><span>To cart</span></Link></>) : 'Add to cart'}</button>
                             <span><h3> {item?.price}$</h3></span>
                         </div>
-                    </div></>}
+                    </div></>}</>}
                 </div>
             </div>
         </div>
