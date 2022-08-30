@@ -14,7 +14,9 @@ const Header: React.FC = () => {
                 <Link to='/'>
                     <img src={logo} alt='logo' className='logo'/>
                 </Link>
-                {active ? <Menu active={active} setActive={setActive}/> : <div className='menu'><img src={burger} alt="menu" onClick={()=>setActive(true)} /></div>}
+                {active 
+                ? <Menu active={active} setActive={setActive}/> 
+                : <div className='menu'><img src={burger} alt="menu" onClick={()=>setActive(true)} /></div>}
             </div>
         </section>
     )

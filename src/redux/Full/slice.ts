@@ -37,16 +37,16 @@ export const FullSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchFullSnk.rejected, (state) => {
-        state.status = SneakersStatus.ERROR
-        state.items = null
+      state.status = SneakersStatus.ERROR
+      state.items = null
     });
     builder.addCase(fetchFullSnk.fulfilled, (state,action) => {
-        state.status = SneakersStatus.SUCCES
-        state.items = action.payload
+      state.status = SneakersStatus.SUCCES
+      state.items = action.payload
     });
     builder.addCase(fetchFullSnk.pending, (state) => {
-        state.status = SneakersStatus.LOADING
-        state.items = null
+      state.status = SneakersStatus.LOADING
+      state.items = null
     })
   }
 })

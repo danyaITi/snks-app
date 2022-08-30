@@ -1,5 +1,5 @@
 import React from "react"
-import img1 from '../../assets/img/img1.jpg'
+import snks from '../../assets/img/snks.png'
 import adidas from '../../assets/img/adidas.jpg'
 import nike from '../../assets/img/nike.webp'
 import puma from '../../assets/img/puma.png'
@@ -18,7 +18,6 @@ const Brends:React.FC = () => {
             transition: {delay: custom * .4}
         }),
     }
-
     const fetureAnimation ={
         hidden: {
             y: -50,
@@ -34,7 +33,7 @@ const Brends:React.FC = () => {
     return(
         <>
             <div className='imgBox'>
-                <motion.img src={img1} alt='img.jpg' initial="hidden"  whileInView="visible" custom={1} variants={textAnimation} viewport={{once: true}} />
+                <motion.img src={snks} alt='img.jpg' initial="hidden"  whileInView="visible" custom={1} variants={textAnimation} viewport={{once: true}} />
                 <motion.p style={{color:'black'}} initial="hidden"  whileInView="visible" custom={1} variants={textAnimation} viewport={{once: true}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus et deserunt excepturi quia magni quam exercitationem, labore architecto minima ratione possimus ex voluptates magnam, tempore, provident cupiditate unde amet</motion.p>
             </div>
             <div className='brendsBox'>

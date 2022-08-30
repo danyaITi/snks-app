@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ISneakers } from '../../models/models'
 import axios from 'axios'
 
-interface ParamsSnk {
+export interface ParamsSnk {
     currentPage: number,
     sort:string,
     order:string

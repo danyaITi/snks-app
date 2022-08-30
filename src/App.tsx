@@ -1,8 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
-import FullSnk from './Components/FullSnk/FullSnk';
-import Cart from './Container/Cart/Cart';
-import Home from './Container/Home/Home';
+import FullSnk from './Pages/FullSnk/FullSnk';
+import Cart from './Pages/Cart/Cart';
+import Home from './Pages/Home/Home'; 
+import NotFound from './Pages/NotFoundPage/NotFound';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='items/:id' element={<FullSnk/>}/>
           <Route path='/cart' element={<Cart/>}/>
+          <Route path='*' element={<NotFound/>}/>
         </Routes>
       </div>
     </div>

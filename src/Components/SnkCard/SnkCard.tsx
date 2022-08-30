@@ -13,21 +13,15 @@ interface SnkCardProps {
     sizes: number[]
 }
     
-
 const SnkCard: React.FC<SnkCardProps> = forwardRef(({title, imageUrl, id, sizes}, ref:React.ForwardedRef<HTMLDivElement>) => {
     const dispatch = useDispatch()
-
-
-    const addSize  = () => {
-        dispatch(setSize(sizes))
-    }
 
     return (
         <div className='item-box' ref={ref} >
             <h2>{title}</h2>
             <img src={imageUrl} alt="sneakers" />
             <Link to={`items/${id}`}>
-                <button onClick={addSize}>
+                <button onClick={()=>dispatch(setSize(sizes))}>
                     Buy now
                 </button>
             </Link>

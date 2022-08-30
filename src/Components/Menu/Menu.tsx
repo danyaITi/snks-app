@@ -30,11 +30,13 @@ const Menu: React.FC<MenuProps> = ({active,setActive}) => {
         }),
     }
 
-    
-
     return (
         <motion.div className='menu-content' initial="hidden" whileInView="visible" viewport={{amount:0.3, once:true}} custom={1} variants={featureAnimation}>
-            <motion.img src={close} alt="close" onClick={()=>setActive(!active)} initial={{ scale: 0 }} animate={{ rotate: 1080, scale: 1 }} transition={{type: "spring", stiffness: 260, damping: 20}}/>
+            <motion.img src={close} alt="close"
+            onClick={()=>setActive(!active)} 
+            initial={{ scale: 0 }} 
+            animate={{ rotate: 1080, scale: 1 }}
+            transition={{type: "spring", stiffness: 260, damping: 20}}/>
             <div>
                 <nav className='navbar'>
                     <Link to='/cart'>

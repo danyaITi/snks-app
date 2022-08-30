@@ -1,13 +1,23 @@
 .item-content{
     position: relative;
-    width: 360px;
+    width: 355px;
     height: 110px;
     border-bottom: 1px solid black;
     display: inline-flex;
     align-items: center;
+    @media (min-width:280px) and (max-width:370px) {
+        width: 270px;
+    }
+    @media (min-width:1200px) {
+        width: 390px;
+        height: 120px;
+    }
     img{
         width: 100px;
         object-fit: contain;
+        @media (min-width:280px) and (max-width:370px) {
+            width: 90px;
+        }
     }
     .delete-img{
         position: absolute;
@@ -16,9 +26,13 @@
         cursor: pointer;
         width: 20px;
         object-fit: contain;
+        @media (min-width:280px) and (max-width:370px) {
+            width: 18px;
+        }
     }
     .item-first{
         span{
+            font-size: 22px;
             background-color: red;
             background-image: linear-gradient(45deg, #000000, #af4261);
             background-size: 100%;
@@ -27,9 +41,17 @@
             -webkit-text-fill-color: transparent; 
             -moz-background-clip: text;
             -moz-text-fill-color: transparent;
+            @media (min-width:280px) and (max-width:370px) {
+               font-size: 17px;
+            }
         }
         h5{
+            font-size: 20px;
+            margin-bottom: 5px;
             color: #000;
+            @media (min-width:280px) and (max-width:370px) {
+                font-size: 18px;
+             }
         }
     }
     .item-second{

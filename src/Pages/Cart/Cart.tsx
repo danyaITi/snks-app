@@ -52,7 +52,9 @@ const Cart: React.FC = () => {
                         <div className='snk-box-content'>
                            <div>
                                 <span className='totalPrice-text'>Total price:</span><span className='totalPrice-count'>{totalPriceSnk}$</span>
-                                {snk.length === 0 ? (<div className='cart-empty'>Cart is empty...</div>) : <div>{snk.map((obj,i)=> (<div className='items' key={i}><CartItem {...obj}/></div>))}</div>}
+                                {snk.length === 0 
+                                ? (<div className='cart-empty'>Cart is empty...</div>) 
+                                : <div>{snk.map((obj,i)=> (<div className='items' key={i}><CartItem {...obj}/></div>))}</div>}
                            </div>
                         </div>
                     </div>

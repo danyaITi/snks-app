@@ -10,7 +10,5 @@ export enum SneakersStatus {
 export interface SneakersSliceState {
     items: ISneakers[],
     status: string,
-    pageNumber: number,
-    snkPerPage: number,
     modalActive: boolean
 }

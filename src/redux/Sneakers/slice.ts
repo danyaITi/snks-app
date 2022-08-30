@@ -6,8 +6,6 @@ import { SneakersSliceState, SneakersStatus } from './types'
 const initialState:SneakersSliceState  = {
   items:[],
   status: SneakersStatus.LOADING,
-  pageNumber: 1,
-  snkPerPage: 3,
   modalActive: false
 }
 
@@ -18,26 +16,23 @@ export const sneakersSlice = createSlice({
     setItems: (state,action:PayloadAction<ISneakers[]>) => {
       state.items = action.payload
     },
-    setPageNumber: (state,action:PayloadAction<number>) => {
-      state.pageNumber = action.payload
-    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchSneakers.rejected, (state) => {
-        state.status = SneakersStatus.ERROR
-        state.items = []
+      state.status = SneakersStatus.ERROR
+      state.items = []
     });
     builder.addCase(fetchSneakers.fulfilled, (state,action) => {
-        state.status = SneakersStatus.SUCCES
-        state.items = action.payload
+      state.status = SneakersStatus.SUCCES
+      state.items = action.payload
     });
     builder.addCase(fetchSneakers.pending, (state) => {
-        state.status = SneakersStatus.LOADING
-        state.items = []
+      state.status = SneakersStatus.LOADING
+      state.items = []
     })
   }
 })
 
-export const { setItems, setPageNumber} = sneakersSlice.actions
+export const { setItems } = sneakersSlice.actions
 
 export default sneakersSlice.reducer

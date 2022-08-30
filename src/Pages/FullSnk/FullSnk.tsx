@@ -5,10 +5,8 @@ import {  setActive } from '../../redux/Full/slice'
 import './FullSnk.scss'
 import { setCart } from '../../redux/Cart/slice'
 import { RootState, useAppDispatch } from '../../redux/store'
-import CarouselComponent from '../Carousel/CarouselComponent'
+import CarouselComponent from '../../Components/Carousel/CarouselComponent'
 import { fetchFullSnk } from '../../redux/api/snk.api'
-
-
 
 const FullSnk: React.FC = () => {
     const [activeSize, setActiveSize] = useState(0)
@@ -23,15 +21,9 @@ const FullSnk: React.FC = () => {
 
     const {id} = useParams()
 
-    const changeActive = () => {
-        dispatchApp(setActive(true))
-    }
-
     useEffect(()=>{
         dispatchApp(fetchFullSnk({id}))
     },[])
-
-    
 
     const addCart = () => {
         const obj = {
@@ -42,15 +34,13 @@ const FullSnk: React.FC = () => {
         }
         !activeSize ? alert("You haven't selected a size") : dispatch(setCart({...obj, count: 0, sizes: activeSize})) && setComplited(true)
     }
-
     
-
     return(
         <div className='fullSnk-content'>
             <div className='fullSnk-box'>
                 <div className='fullSnk__between'>
                     <Link to='/'>
-                        <button className='fullSnk-back' onClick={changeActive}>Back</button>
+                        <button className='fullSnk-button__back' onClick={()=>dispatchApp(setActive(true))}>Back</button>
                     </Link>
                     <Link to='/cart' className='toCart'>
                         <div className='fullSnk__between cart-box'>
@@ -59,15 +49,26 @@ const FullSnk: React.FC = () => {
                     </Link>
                 </div>
                 <div className='fullSnk__flex fullSnk__center'>
-                    {status === 'Error' ? (<h1>Not found:(</h1>) : <>{status === 'Loading' ? (<div className='fullSnk-loader'></div>) : <><div className='carousel-content'>
+                    {status === 'Error' 
+                    ? (<h1>Not found:(</h1>) 
+                    : <>{status === 'Loading' 
+                    ? (<div className='fullSnk-loader'></div>) 
+                    : <><div className='carousel-content'>
                         <CarouselComponent sneakers={item}/>
                     </div> 
                     <div>
                         <h1>{item?.title}</h1>
                         <h4 className='size'>Sizes:</h4>
-                        <ul className='size-box'>{sizes.map((number)=> (<div key={number} style={{display:'flex', justifyContent: 'center'}}><li onClick={()=>setActiveSize(number)} className={activeSize === number ? 'active' : ''}>{number}</li></div>))} </ul>
+                        <ul className='size-box'>{sizes.map((number)=> (<div key={number} style={{display:'flex', justifyContent: 'center'}}>
+                            <li onClick={()=>setActiveSize(number)} className={activeSize === number ? 'active' : ''}>{number}</li></div>))}
+                        </ul>
                         <div className='fullSnk-button'>
-                            <button disabled={complited===true} onClick={addCart} className={!complited ? 'btnNoActive' : 'btnActive'}>{complited ? (<><span>Complited! </span> <Link to='/cart' className='toCart'><span>To cart</span></Link></>) : 'Add to cart'}</button>
+                            <button
+                            disabled={complited===true}
+                            onClick={addCart}
+                            className={!complited ? 'btnNoActive' : 'btnActive'}
+                            >
+                            {complited ? (<><span>Complited! </span> <Link to='/cart' className='toCart'><span>To cart</span></Link></>) : 'Add to cart'}</button>
                             <span><h3> {item?.price}$</h3></span>
                         </div>
                     </div></>}</>}

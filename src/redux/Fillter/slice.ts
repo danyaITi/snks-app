@@ -6,7 +6,9 @@ const initialState = {
     name: "цене(desc)",
     sortProperty: SortPropertyEnum.DPRICE
   },
-  open: false
+  open: false,
+  pageNumber: 1,
+  snkPerPage: 3,
 };
 
 const filterSlice = createSlice({
@@ -17,15 +19,23 @@ const filterSlice = createSlice({
       state.item = action.payload;
     },
     setOpen: (state,action: PayloadAction<boolean>) => {
-        state.open = action.payload;
-    }
-
+      state.open = action.payload;
+    },
+    setPageNumber: (state,action:PayloadAction<number>) => {
+      state.pageNumber = action.payload
+    },
+    setStateFilters(state, action) {
+      state.item = action.payload.selected;
+      state.pageNumber = Number(action.payload.currentPage);
+    },
   }
 });
 
 export const {
   setStateItem,
-  setOpen
+  setOpen,
+  setPageNumber,
+  setStateFilters
 } = filterSlice.actions;
 
 export default filterSlice.reducer;

@@ -9,5 +9,7 @@ export enum SortPropertyEnum {
   
   export interface FilterSliceState {
     item: Item;
-    open:boolean
+    open:boolean,
+    pageNumber: number,
+    snkPerPage: number
 }

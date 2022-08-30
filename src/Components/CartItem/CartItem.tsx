@@ -17,29 +17,18 @@ interface CartItemProps {
 
 const CartItem: React.FC<CartItemProps> = ({title,price,count,imageUrl,sizes,id}) => {
     const dispatch = useDispatch()
-
-    const plusSnk = () => {
-        dispatch(setCart({id} as TypesCart))
-
-    }
-    const minusSnk = () => {
-        dispatch(setMinusSnk(id))
-    }
-
-    const deleteSnk = () => {
-        dispatch(setDelete(id))
-    }
     
     return(
         <div className='item-content'>
             <img src={imageUrl} alt="sneakers" />
-            <img src={delet} alt="" className='delete-img' onClick={deleteSnk} />
+            <img src={delet} alt="" className='delete-img' onClick={()=>dispatch(setDelete(id))} />
             <div className='item-first'>
                 <h5><span>Price:</span> {price}$</h5>
                 <span>{title}</span>
             </div>
             <div className='item-second'>
-                <div className='count'><button onClick={minusSnk} disabled={count === 1} ><span>-</span></button><b>{count}</b><button onClick={plusSnk}><span>+</span></button></div>
+                <div className='count'><button onClick={()=>dispatch(setMinusSnk(id))} disabled={count === 1}><span>-</span></button>
+                    <b>{count}</b><button onClick={()=>dispatch(setCart({id} as TypesCart))}><span>+</span></button></div>
                 <div className='size'><span>Size:</span> {sizes}</div>
             </div>
         </div>
